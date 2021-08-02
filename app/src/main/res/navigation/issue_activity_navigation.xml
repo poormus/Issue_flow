@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/issue_activity_navigation"
+    app:startDestination="@id/dashBoardFragment">
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.DashBoardFragment"
+        android:label="Main"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashBoardFragment_to_allIssuesPagerFragment"
+            app:destination="@id/allIssuesPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.SettingsFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/allIssuesPagerFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.AllIssuesPagerFragment"
+        android:label="Issue"
+        tools:layout="@layout/fragment_pager_all_issues">
+        <argument
+            android:name="projectId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_createIssueFragment"
+            app:destination="@id/createIssueFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_issueDetailFragment"
+            app:destination="@id/issueDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_issueSearchFragment"
+            app:destination="@id/issueSearchFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_all_issues_by_user"
+        android:id="@+id/allIssuesByUserFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.AllIssuesByUserFragment"
+        android:label="AllIssuesByUserFragment" >
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_createIssueFragment"
+            app:destination="@id/createIssueFragment" />
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_issueDetailFragment"
+            app:destination="@id/issueDetailFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_all_issues_project"
+        android:id="@+id/allProjectIssuesFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.AllProjectIssuesFragment"
+        android:label="AllProjectIssuesFragment">
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_issueDetailFragment"
+            app:destination="@id/issueDetailFragment" />
+        <action
+            android:id="@+id/action_allIssuesPagerFragment_to_issueSearchFragment"
+            app:destination="@id/issueSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createIssueFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.CreateIssueFragment"
+        android:label="Create"
+        tools:layout="@layout/fragment_create_issue">
+        <argument
+            android:name="projectId"
+            app:argType="string" />
+        <argument
+            android:name="issueToUpdate"
+            android:defaultValue="@null"
+            app:argType="com.mussrose.issueflower.entities.Issue"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/issueDetailFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.issuedetail.IssueDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_issue_detail">
+        <argument
+            android:name="issue"
+            app:argType="com.mussrose.issueflower.entities.Issue" />
+    </fragment>
+    <fragment
+        android:id="@+id/issueSearchFragment"
+        android:name="com.mussrose.issueflower.ui.main.fragments.search.IssueSearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search_issue">
+
+        <argument
+            android:name="projectId"
+            app:argType="string" />
+        <argument
+            android:name="query"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_issueSearchFragment_to_issueDetailFragment"
+            app:destination="@id/issueDetailFragment" />
+    </fragment>
+</navigation>

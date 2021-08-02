@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_activity_navigation"
+    app:startDestination="@id/authViewPagerFragment">
+
+    <fragment
+        android:id="@+id/authViewPagerFragment"
+        android:name="com.mussrose.issueflower.ui.auth.fragment.AuthViewPagerFragment"
+        android:label="Flash Issue"
+        tools:layout="@layout/activity_auth">
+        <action
+            android:id="@+id/action_authViewPagerFragment_to_tourFragment"
+            app:destination="@id/tourFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/tourFragment"
+        android:name="com.mussrose.issueflower.ui.auth.fragment.TourFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_tour" />
+    <fragment
+        tools:layout="@layout/fragment_log_in"
+        android:id="@+id/logInFragment"
+        android:name="com.mussrose.issueflower.ui.auth.fragment.LogInFragment"
+        android:label="LogInFragment" >
+        <action
+            android:id="@+id/action_authViewPagerFragment_to_tourFragment"
+            app:destination="@id/tourFragment" />
+    </fragment>
+</navigation>

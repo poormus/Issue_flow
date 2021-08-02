@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    >
+
+    <LinearLayout
+        android:paddingVertical="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginHorizontal="5dp"
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBottomDialogUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_user_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivBottomDialogUserPic"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:elevation="50dp"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBottomDialogUser"
+            app:layout_constraintEnd_toEndOf="@+id/ivBottomDialogUser"
+            app:layout_constraintStart_toStartOf="@+id/ivBottomDialogUser"
+            app:layout_constraintTop_toTopOf="@+id/ivBottomDialogUser" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etBottomDialogAddComment"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Add public comment"
+            app:layout_constraintStart_toEndOf="@id/ivBottomDialogUser"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginStart="10dp"
+            android:id="@+id/btBottomDialogSend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/etBottomDialogAddComment"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:layout_marginStart="10dp"
+            android:id="@+id/pbCreateComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btBottomDialogSend"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/btBottomDialogSend"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

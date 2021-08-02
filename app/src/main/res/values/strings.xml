@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Flash issue</string>
+
+    <string-array name="sort">
+        <item>Old first</item>
+        <item>New first</item>
+        <item>most upvoted</item>
+        <item>most commented</item>
+    </string-array>
+</resources>

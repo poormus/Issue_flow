@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tilAddTag"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etAddTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Label"
+        android:maxLength="20"
+        android:inputType="textAutoComplete"
+        android:padding="16dp"
+        android:textColorHint="@android:color/tertiary_text_light" />
+
+</com.google.android.material.textfield.TextInputLayout>

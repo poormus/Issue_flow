@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginStart="8dp"
+            android:id="@+id/tvAllCommentsBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Comments:"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_baseline_comment_24"
+            app:layout_constraintBottom_toBottomOf="@id/tvAllCommentsBottomSheet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvAllCommentsBottomSheet" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAllComments"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvAllCommentsBottomSheet"
+            tools:listitem="@layout/item_comment"
+            android:clipToPadding="false"
+            android:paddingBottom="10dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/pbComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rvAllComments"
+            app:layout_constraintEnd_toEndOf="@id/rvAllComments"
+            app:layout_constraintStart_toStartOf="@id/rvAllComments"
+            app:layout_constraintTop_toTopOf="@+id/rvAllComments"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvNoCommentWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No comments yet."
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pbComments"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
